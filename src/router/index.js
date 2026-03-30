@@ -8,10 +8,6 @@ import AboutPage from '../pages/about.vue'
 const routes = [
   {
     path: '/',
-    component: AppPage,
-  },
-  {
-    path: '/umoving',
     component: UmovingPage,
   },
   {
