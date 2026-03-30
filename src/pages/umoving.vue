@@ -4,7 +4,7 @@
       <div class="shell header-row">
         <a class="brand" href="#top" aria-label="umovingu home">
           <img src="/umoving.svg" alt="umovingu" />
-          <span>umovingu Website </span>
+          <span>umovingu</span>
         </a>
 
         <button
@@ -31,8 +31,8 @@
       </div>
 
       <nav v-if="menuOpen" class="mobile-nav" aria-label="Mobile navigation">
-        <a href="#how" @click="menuOpen = false">Home</a>
-        <a href="#whynow" @click="menuOpen = false">Why now?</a>
+        <a href="/" @click="menuOpen = false">Home</a>
+        <a href="/#whynow" @click="menuOpen = false">Why now?</a>
         <a href="/product" @click="menuOpen = false">Product</a>
         <a href="/about" @click="menuOpen = false">Our story</a>
         <a href="/contact" @click="menuOpen = false">Contact</a>

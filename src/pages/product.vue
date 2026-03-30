@@ -20,9 +20,9 @@
         </button>
 
         <nav class="desktop-nav" aria-label="Main navigation">
-          <a href="/umoving">Home</a>
-          <a href="/umoving#whynow">Why now?</a>
-          <a class="" href="/product">Product</a>
+          <a href="/">Home</a>
+          <a href="/#whynow">Why now?</a>
+          <a href="/product">Product</a>
           <a href="/about">Our story</a>
           <a href="/contact">Contact</a>
         </nav>
@@ -31,8 +31,8 @@
       </div>
 
       <nav v-if="menuOpen" class="mobile-nav" aria-label="Mobile navigation">
-        <a href="/umoving" @click="menuOpen = false">Home</a>
-        <a href="/umoving#whynow" @click="menuOpen = false">Why now?</a>
+        <a href="/" @click="menuOpen = false">Home</a>
+        <a href="/#whynow" @click="menuOpen = false">Why now?</a>
         <a href="/product" @click="menuOpen = false">Product</a>
         <a href="/about" @click="menuOpen = false">Our story</a>
         <a href="/contact" @click="menuOpen = false">Contact</a>
