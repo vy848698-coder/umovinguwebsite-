@@ -1223,7 +1223,7 @@ const timeline = [
 
 .footer-brand {
   margin: 0;
-  font-family: 'SF Pro Display', -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   color: #ffffff;
@@ -1267,11 +1267,12 @@ const timeline = [
   color: rgb(255 255 255 / 0.7);
   font-size: 0.9rem;
   line-height: 1.4;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
 }
 
 .umu-footer a:hover,
 .umu-footer a:focus-visible {
-  color: #ffffff;
+  color:rgb(0 161 154 / var(--tw-bg-opacity, 1));
 }
 
 .footer-social {
@@ -1296,7 +1297,7 @@ const timeline = [
 }
 
 .footer-social a:hover {
-  color: #ffffff;
+ color:rgb(0 161 154 / var(--tw-bg-opacity, 1));
 }
 
 .footer-social a:hover svg {

@@ -2170,7 +2170,7 @@ font-size: 12px;
 
 .footer-brand {
   margin: 0;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
   font-weight: 700;
   font-size: clamp(1.3rem, 2.5vw, 1.7rem);
   color: #ffffff;
@@ -2213,11 +2213,12 @@ font-size: 12px;
   color: rgb(255 255 255 / 0.7);
   font-size: 0.9rem;
   line-height: 1.4;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
 }
 
 .umu-footer a:hover,
 .umu-footer a:focus-visible {
-  color: #ffffff;
+  color: rgb(0 161 154 / var(--tw-bg-opacity, 1));
 }
 
 .footer-social {
@@ -2242,7 +2243,7 @@ font-size: 12px;
 }
 
 .footer-social a:hover {
-  color: #ffffff;
+  color: rgb(0 161 154 / var(--tw-bg-opacity, 1));
 }
 
 .footer-social a:hover svg {
