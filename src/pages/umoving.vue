@@ -314,7 +314,7 @@
               they have paid to find out. umovingu exists to change that, for both
               sides, before the first cost is ever incurred.
             </p>
-            <a href="#contact" class="buyer-cta-btn">Get started with umovingu</a>
+            <a href="/contact" class="buyer-cta-btn">Get started with umovingu</a>
           </div>
         </div>
       </section>
@@ -446,7 +446,7 @@
             process that usually takes 22 weeks takes a fraction of the time.
           </p>
           <div class="solution-actions">
-            <a href="#contact" class="solution-btn-primary">Get started with umovingu for free</a>
+            <a href="/contact" class="solution-btn-primary">Get started with umovingu for free</a>
             <a href="#how" class="solution-btn-secondary">How it works</a>
           </div>
         </div>
@@ -482,7 +482,7 @@
             By now you know how it works. The next step is choosing your path
             and telling us a little about you. It takes a minute.
           </p>
-          <a href="mailto:hello@umovingu.com" class="contact-btn">Start my Property Passport: it&rsquo;s free</a>
+          <a href="/contact" class="contact-btn">Start my Property Passport: it&rsquo;s free</a>
         </div>
       </section>
     </main>

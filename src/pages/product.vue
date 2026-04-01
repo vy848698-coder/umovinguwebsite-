@@ -57,6 +57,25 @@
         </div>
       </section>
 
+      <!-- ── Founding 30 ── -->
+      <section class="founding-section">
+        <div class="shell founding-content">
+          <h2 class="founding-heading">The Founding 30</h2>
+          <p class="founding-subtitle">Thirty homeowners. Private access. Before anyone else.</p>
+          <p class="founding-body">
+            We are inviting 30 homeowners to use umovingu ahead of the public launch. The product is
+            ready. What we want from the Founding 30 is honest experience &mdash; real homes, real
+            documents, real feedback that makes what is already good even better. In return you get
+            early access, a direct line to the founding team, and a Property Passport that is already
+            working for you while everyone else is still waiting.
+          </p>
+          <div class="founding-actions">
+            <a href="/about#founding30" class="founding-btn-primary">Learn about the Founding 30</a>
+            <a href="/contact" class="founding-btn-secondary">Apply for early access</a>
+          </div>
+        </div>
+      </section>
+
       <!-- ── Filing Cabinet ── -->
       <section class="vault-section">
         <div class="shell vault-grid">
@@ -175,8 +194,21 @@
           <h2 class="infra-heading">
             Built on the foundations the<br />property industry already <em>trusts.</em>
           </h2>
-          <div class="infra-pills reveal">
-            <span v-for="org in orgs" :key="org" class="infra-pill">{{ org }}</span>
+          <div class="infra-logos reveal">
+            <div class="infra-row">
+              <img src="/partner.png" alt="HM Land Registry" class="infra-logo" />
+              <img src="/rics.png" alt="RICS" class="infra-logo" />
+              <img src="/housing.png" alt="Ministry of Housing, Communities & Local Government" class="infra-logo" />
+              <img src="/open-property.png" alt="Open Property Data Association" class="infra-logo" />
+              <img src="/cfit.png" alt="CFIT" class="infra-logo" />
+              <img src="/coventry.png" alt="Coventry University" class="infra-logo" />
+              <img src="/wbs.png" alt="Warwick Business School" class="infra-logo" />
+            </div>
+            <div class="infra-row">
+              <img src="/warwick.png" alt="University of Warwick" class="infra-logo" />
+              <img src="/technology.png" alt="Department for Business, Innovation & Technology" class="infra-logo" />
+              <a href="" target="_blank" rel="noopener noreferrer" class="infra-op-badge">OpenProperty</a>
+            </div>
           </div>
         </div>
       </section>
@@ -329,17 +361,7 @@ const timeline = [
   { title: 'Exchange confirmed. Completion: Friday.', time: 'Day 11, because everything was ready before the sale began', highlight: true },
 ]
 
-const orgs = [
-  'HM Land Registry',
-  'RICS',
-  'Open Property Data Association',
-  'MHCLG',
-  'CFIT',
-  'Coventry University',
-  'Warwick Business School',
-  'Department for Science and Innovation',
-  'OpenProperty',
-]
+
 </script>
 
 <style scoped>
@@ -374,7 +396,7 @@ const orgs = [
 .umu-page img,
 .umu-page video {
   max-width: 100%;
-  height: auto;
+  height: 48px;
 }
 
 .shell {
@@ -603,6 +625,93 @@ const orgs = [
   color: rgb(255 255 255 / 0.5);
 }
 
+/* ── Founding 30 ── */
+.founding-section {
+  background: #ffffff;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  text-align: center;
+}
+
+.founding-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.founding-heading {
+  margin: 0;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 72px);
+  line-height: 1;
+  color: var(--ink);
+}
+
+.founding-subtitle {
+  margin: 18px 0 0;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.founding-body {
+  margin: 14px auto 0;
+  max-width: 640px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+  line-height: 1.65;
+  color: rgb(35 29 69 / 0.7);
+}
+
+.founding-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.founding-btn-primary,
+.founding-btn-secondary {
+  min-height: 50px;
+  padding: 0 30px;
+  border-radius: 999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.14s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.founding-btn-primary {
+  background: var(--dark);
+  color: #ffffff;
+  border: none;
+}
+
+.founding-btn-primary:hover {
+  background: #1b1534;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgb(29 36 69 / 0.2);
+}
+
+.founding-btn-secondary {
+  background: #ffffff;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.founding-btn-secondary:hover {
+  background: #f2f6f8;
+  transform: translateY(-1px);
+}
+
 /* ── Shared Section Typography ── */
 .section-eyebrow {
   margin: 0 0 16px;
@@ -784,7 +893,6 @@ const orgs = [
 .checks-table {
   background: var(--dark);
   border: 1px solid rgb(255 255 255 / 0.08);
-  border-top: 3px solid var(--accent);
   border-radius: 18px;
   padding: clamp(16px, 2vw, 24px);
   box-shadow: 0 8px 32px rgb(0 0 0 / 0.25);
@@ -937,8 +1045,10 @@ const orgs = [
 /* ── Infrastructure ── */
 .infra-section {
   padding: clamp(4rem, 8vw, 7rem) 0;
-  background: var(--bg);
+  background: #ffffff;
   text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .infra-heading {
@@ -954,24 +1064,58 @@ const orgs = [
   font-style: italic;
 }
 
-.infra-pills {
-  margin-top: clamp(24px, 3vw, 36px);
+.infra-logos {
+  margin-top: clamp(32px, 4vw, 48px);
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 4vw, 44px);
 }
 
-.infra-pill {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
+.infra-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3.5vw, 40px);
+}
+
+.infra-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.infra-row:last-child .infra-logo {
+  height: 42px;
+}
+
+.infra-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.infra-op-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--ink);
-  background: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.infra-op-badge:hover {
+  background: rgb(0 161 154 / 0.06);
+  border-color: var(--accent-dark);
 }
 
 /* ── Ready CTA ── */
@@ -1329,6 +1473,10 @@ const orgs = [
   .section-heading,
   .infra-heading {
     font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .founding-heading {
+    font-size: clamp(1.5rem, 7vw, 2.2rem);
   }
 
   .ready-heading {
