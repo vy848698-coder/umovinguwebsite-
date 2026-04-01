@@ -51,29 +51,80 @@
           </h1>
 
           <div class="path-grid">
-            <a href="mailto:hello@umovingu.io" class="path-card">
+            <div class="path-card" :class="{ 'path-card-active': selectedPath === 'I own a home and want to know what\u2019s in it' }" @click="selectPath('I own a home and want to know what\u2019s in it')">
               <span class="path-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9 6 9-6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
               </span>
               <h3>I own a home and want to know what&rsquo;s in it</h3>
               <p>Build your record before pressure starts.</p>
-            </a>
+            </div>
 
-            <a href="mailto:hello@umovingu.io" class="path-card">
+            <div class="path-card" :class="{ 'path-card-active': selectedPath === 'I\u2019m selling soon or have already accepted an offer' }" @click="selectPath('I\u2019m selling soon or have already accepted an offer')">
               <span class="path-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
               </span>
               <h3>I&rsquo;m selling soon or have already accepted an offer</h3>
               <p>Get sale ready with everything in one place.</p>
-            </a>
+            </div>
 
-            <a href="mailto:hello@umovingu.io" class="path-card">
+            <div class="path-card" :class="{ 'path-card-active': selectedPath === 'I\u2019m buying and want to know before I commit' }" @click="selectPath('I\u2019m buying and want to know before I commit')">
               <span class="path-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               </span>
               <h3>I&rsquo;m buying and want to know before I commit</h3>
               <p>See risks before surveys and fees.</p>
-            </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early Access Form -->
+      <section v-if="selectedPath" class="form-section">
+        <div class="shell">
+          <div ref="formSection" class="form-wrapper">
+            <div class="form-header">
+              <p class="form-header-eyebrow">YOU&rsquo;RE REQUESTING EARLY ACCESS AS</p>
+              <h3 class="form-header-title">{{ selectedPath }}</h3>
+            </div>
+            <div class="form-body">
+              <div class="form-group">
+                <label class="form-label" for="fullName">FULL NAME <span class="form-required">*</span></label>
+                <input id="fullName" v-model="formData.fullName" type="text" class="form-input" placeholder="—" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">EMAIL ADDRESS <span class="form-required">*</span></label>
+                <input id="email" v-model="formData.email" type="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">PHONE NUMBER</label>
+                <input id="phone" v-model="formData.phone" type="tel" class="form-input" placeholder="Your phone number (optional)" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">ANYTHING ELSE WE SHOULD KNOW? <span class="form-required">*</span></label>
+                <textarea id="message" v-model="formData.message" class="form-input form-textarea" placeholder="A sentence or two is enough..." rows="5"></textarea>
+              </div>
+              <button type="button" class="form-submit" :disabled="formSubmitting" @click="submitForm">
+                {{ formSubmitting ? 'SENDING...' : 'REQUEST EARLY ACCESS' }}
+                <svg v-if="!formSubmitting" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <p v-if="formSuccess" class="form-success-msg">Thank you! We&rsquo;ll be in touch soon.</p>
+              <p v-if="formError" class="form-error-msg">{{ formError }}</p>
+            </div>
+
+            <div class="form-trust-row">
+              <div class="form-trust-card">
+                <h4>Free to start</h4>
+                <p>No card required to join the waitlist.</p>
+              </div>
+              <div class="form-trust-card">
+                <h4>24-hour reply</h4>
+                <p>We aim to respond within one business day.</p>
+              </div>
+              <div class="form-trust-card">
+                <h4>Your data stays yours</h4>
+                <p>We don&rsquo;t sell your details. Ever.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,36 +203,9 @@
             <span class="footer-brand">umovingu</span>
           </div>
           <p class="footer-muted">
-            The home record that<br />makes your sale ready<br />before it starts.
-          </p>
-          <p class="footer-infra-note">
-            Professional infrastructure:<br />
-            <a href="https://openproperty.io" target="_blank" rel="noopener noreferrer" class="footer-op-link">openproperty.io</a>
+            The home record that makes<br />your sale ready before it starts.
           </p>
           <a href="/contact" class="footer-access">Get early access &rarr;</a>
-          <div class="footer-app">
-            <p class="footer-app-label">DOWNLOAD THE APP</p>
-            <a href="#" class="footer-store-badge" aria-label="Get it on Google Play">
-              <svg width="135" height="40" viewBox="0 0 135 40" fill="none">
-                <rect width="135" height="40" rx="5" fill="#000"/>
-                <text x="67" y="14" text-anchor="middle" font-size="7" fill="#fff" font-family="sans-serif" letter-spacing="0.4">GET IT ON</text>
-                <text x="72" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#fff" font-family="sans-serif">Google Play</text>
-                <path d="M18 9l10 11-10 11V9z" fill="#34a853"/>
-                <path d="M18 9l12 7-2 4L18 9z" fill="#fbbc04"/>
-                <path d="M18 31l10-11 2 4-12 7z" fill="#ea4335"/>
-                <path d="M18 9v22l-2-2V11l2-2z" fill="#4285f4"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-head">PRODUCT</p>
-          <a href="/umoving#howitworks">How it works</a>
-          <a href="/product">The Property Passport</a>
-          <a href="/about">Our story</a>
-          <a href="/about#founding30">The Founding 30</a>
-          <a href="https://whatsapp.com/channel/0029VbBX5LCIiRotkq7Uiw26" target="_blank" rel="noopener noreferrer">WhatsApp community</a>
         </div>
 
         <div>
@@ -191,6 +215,15 @@
           <a href="/umoving#timeline">180 days vs 14 days</a>
           <a href="/umoving#issues">Lender eligibility issues</a>
           <a href="/umoving#buyerperspective">If you are buying</a>
+        </div>
+
+        <div>
+          <p class="footer-head">PRODUCT &amp; COMPANY</p>
+          <a href="/umoving#howitworks">How it works</a>
+          <a href="/product">The Property Passport</a>
+          <a href="/about">Our story</a>
+          <a href="/about#founding30">The Founding 30</a>
+          <a href="https://whatsapp.com/channel/0029VbBX5LCIiRotkq7Uiw26" target="_blank" rel="noopener noreferrer">WhatsApp community</a>
         </div>
 
         <div>
@@ -217,17 +250,18 @@
             </a>
           </div>
         </div>
-
-        <div>
-          <p class="footer-head">LEGAL</p>
-          <a href="https://www.umovingu.io/privacy/" target="_blank" rel="noopener noreferrer">Privacy policy</a>
-          <a href="https://www.umovingu.io/terms/" target="_blank" rel="noopener noreferrer">Terms of service</a>
-          <a href="https://www.umovingu.io/cookies/" target="_blank" rel="noopener noreferrer">Cookie policy</a>
-        </div>
       </div>
 
       <div class="shell footer-bottom">
         <p>&copy; 2025 umovingu Limited &middot; Company No. 13321548 &middot; Registered in England and Wales</p>
+        <p class="footer-bottom-links">
+          <a href="https://www.umovingu.io/privacy/" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+          <span class="footer-dot">&middot;</span>
+          <a href="https://www.umovingu.io/terms/" target="_blank" rel="noopener noreferrer">Terms of service</a>
+          <span class="footer-dot">&middot;</span>
+          <a href="https://www.umovingu.io/cookies/" target="_blank" rel="noopener noreferrer">Cookie policy</a>
+        </p>
+        <p class="footer-infra-note">Professional infrastructure: <a href="https://openproperty.io" target="_blank" rel="noopener noreferrer" class="footer-op-link">openproperty.io</a></p>
       </div>
     </footer>
 
@@ -249,9 +283,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, reactive, nextTick } from 'vue'
 const menuOpen = ref(false)
 const showCookies = ref(true)
+
+const selectedPath = ref('')
+const formSection = ref<HTMLElement | null>(null)
+const formSubmitting = ref(false)
+const formSuccess = ref(false)
+const formError = ref('')
+
+const formData = reactive({
+  fullName: '',
+  email: '',
+  phone: '',
+  message: ''
+})
+
+function selectPath(title: string) {
+  if (selectedPath.value === title) {
+    selectedPath.value = ''
+    return
+  }
+  selectedPath.value = title
+  formSuccess.value = false
+  formError.value = ''
+  nextTick(() => {
+    formSection.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
+async function submitForm() {
+  formError.value = ''
+  formSuccess.value = false
+
+  if (!formData.fullName.trim() || !formData.email.trim() || !formData.message.trim()) {
+    formError.value = 'Please fill in all required fields.'
+    return
+  }
+
+  formSubmitting.value = true
+  try {
+    const response = await fetch('https://formspree.io/f/xpzvqbqw', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        path: selectedPath.value,
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      })
+    })
+    if (response.ok) {
+      formSuccess.value = true
+      formData.fullName = ''
+      formData.email = ''
+      formData.phone = ''
+      formData.message = ''
+    } else {
+      formError.value = 'Something went wrong. Please try again.'
+    }
+  } catch {
+    formError.value = 'Network error. Please check your connection.'
+  } finally {
+    formSubmitting.value = false
+  }
+}
 </script>
 
 <style scoped>
@@ -522,11 +620,17 @@ const showCookies = ref(true)
   border-radius: 18px;
   padding: clamp(20px, 2.5vw, 28px);
   text-decoration: none;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
 }
 
 .path-card:hover {
   background: rgb(255 255 255 / 0.12);
+}
+
+.path-card-active {
+  background: rgb(255 255 255 / 0.14);
+  border-color: rgb(94 230 214 / 0.5);
 }
 
 .path-icon {
@@ -556,6 +660,170 @@ const showCookies = ref(true)
   font-size: 18px;
   line-height: 1.625;
   color: rgb(255 255 255 / 0.65);
+}
+
+/* ── Form Section ── */
+.form-section {
+  background: #ffffff;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+/* ── Early Access Form ── */
+.form-wrapper {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.form-header {
+  background: linear-gradient(158deg, var(--dark) 0%, var(--dark-2) 100%);
+  border-radius: 18px 18px 0 0;
+  padding: clamp(18px, 3vw, 24px) clamp(24px, 3vw, 32px);
+}
+
+.form-header-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(94 230 214 / 0.7);
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+.form-header-title {
+  margin: 0;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.form-body {
+  background: #f8f7f5;
+  border: 1.5px dashed #d0cdc6;
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+  padding: clamp(28px, 4vw, 40px) clamp(28px, 3vw, 40px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(35, 29, 69, 0.5);
+}
+
+.form-required {
+  color: var(--accent);
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e0ddd6;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input::placeholder {
+  color: #b5b0a8;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgb(0 161 154 / 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 16px 36px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  font-family: inherit;
+}
+
+.form-submit:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-success-msg {
+  margin: 16px 0 0;
+  color: #16a34a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-error-msg {
+  margin: 16px 0 0;
+  color: #dc2626;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-trust-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form-trust-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+
+.form-trust-card h4 {
+  margin: 0 0 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.form-trust-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 /* ── Get in Touch ── */
@@ -773,7 +1041,7 @@ const showCookies = ref(true)
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 0.8fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: clamp(20px, 3vw, 40px);
 }
 
@@ -809,24 +1077,6 @@ const showCookies = ref(true)
   color: rgb(255 255 255 / 0.45);
 }
 
-.footer-infra-note {
-  margin: 14px 0 0;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 0.35);
-}
-
-.footer-op-link {
-  display: inline !important;
-  font-size: inherit !important;
-  color: rgb(255 255 255 / 0.5) !important;
-  text-decoration: underline !important;
-}
-
-.footer-op-link:hover {
-  color: #ffffff !important;
-}
-
 .footer-access {
   display: inline-block;
   margin: 18px 0 20px;
@@ -839,29 +1089,6 @@ const showCookies = ref(true)
 
 .footer-access:hover {
   color: rgb(255 255 255 / 0.7);
-}
-
-.footer-app {
-  margin-top: auto;
-  padding-top: 10px;
-}
-
-.footer-app-label {
-  margin: 0 0 8px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: rgb(255 255 255 / 0.35);
-}
-
-.footer-store-badge {
-  display: inline-block !important;
-  margin: 0 !important;
-  line-height: 0;
-}
-
-.footer-store-badge svg {
-  display: block;
 }
 
 .footer-head {
@@ -930,6 +1157,45 @@ const showCookies = ref(true)
   line-height: 1.5;
 }
 
+.footer-bottom-links {
+  margin: 6px 0 !important;
+}
+
+.footer-bottom-links a {
+  display: inline !important;
+  color: rgb(255 255 255 / 0.5);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-dot {
+  color: rgb(255 255 255 / 0.3);
+  margin: 0 4px;
+}
+
+.footer-bottom .footer-infra-note {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.35);
+}
+
+.footer-bottom .footer-op-link {
+  display: inline !important;
+  font-size: inherit !important;
+  color: rgb(255 255 255 / 0.5) !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom .footer-op-link:hover {
+  color: #ffffff !important;
+}
+
 .footer-bottom a {
   display: inline !important;
   color: rgb(255 255 255 / 0.5);
@@ -991,6 +1257,10 @@ const showCookies = ref(true)
 
   .path-grid,
   .touch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-trust-row {
     grid-template-columns: 1fr;
   }
 

@@ -225,36 +225,9 @@
             <span class="footer-brand">umovingu</span>
           </div>
           <p class="footer-muted">
-            The home record that<br />makes your sale ready<br />before it starts.
-          </p>
-          <p class="footer-infra-note">
-            Professional infrastructure:<br />
-            <a href="https://openproperty.io" target="_blank" rel="noopener noreferrer" class="footer-op-link">openproperty.io</a>
+            The home record that makes<br />your sale ready before it starts.
           </p>
           <a href="/contact" class="footer-access">Get early access &rarr;</a>
-          <div class="footer-app">
-            <p class="footer-app-label">DOWNLOAD THE APP</p>
-            <a href="#" class="footer-store-badge" aria-label="Get it on Google Play">
-              <svg width="135" height="40" viewBox="0 0 135 40" fill="none">
-                <rect width="135" height="40" rx="5" fill="#000"/>
-                <text x="67" y="14" text-anchor="middle" font-size="7" fill="#fff" font-family="sans-serif" letter-spacing="0.4">GET IT ON</text>
-                <text x="72" y="28" text-anchor="middle" font-size="13" font-weight="600" fill="#fff" font-family="sans-serif">Google Play</text>
-                <path d="M18 9l10 11-10 11V9z" fill="#34a853"/>
-                <path d="M18 9l12 7-2 4L18 9z" fill="#fbbc04"/>
-                <path d="M18 31l10-11 2 4-12 7z" fill="#ea4335"/>
-                <path d="M18 9v22l-2-2V11l2-2z" fill="#4285f4"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-head">PRODUCT</p>
-          <a href="/umoving#howitworks">How it works</a>
-          <a href="/product">The Property Passport</a>
-          <a href="/about">Our story</a>
-          <a href="/about#founding30">The Founding 30</a>
-          <a href="https://whatsapp.com/channel/0029VbBX5LCIiRotkq7Uiw26" target="_blank" rel="noopener noreferrer">WhatsApp community</a>
         </div>
 
         <div>
@@ -264,6 +237,15 @@
           <a href="/umoving#timeline">180 days vs 14 days</a>
           <a href="/umoving#issues">Lender eligibility issues</a>
           <a href="/umoving#buyerperspective">If you are buying</a>
+        </div>
+
+        <div>
+          <p class="footer-head">PRODUCT &amp; COMPANY</p>
+          <a href="/umoving#howitworks">How it works</a>
+          <a href="/product">The Property Passport</a>
+          <a href="/about">Our story</a>
+          <a href="/about#founding30">The Founding 30</a>
+          <a href="https://whatsapp.com/channel/0029VbBX5LCIiRotkq7Uiw26" target="_blank" rel="noopener noreferrer">WhatsApp community</a>
         </div>
 
         <div>
@@ -290,17 +272,18 @@
             </a>
           </div>
         </div>
-
-        <div>
-          <p class="footer-head">LEGAL</p>
-          <a href="https://www.umovingu.io/privacy/" target="_blank" rel="noopener noreferrer">Privacy policy</a>
-          <a href="https://www.umovingu.io/terms/" target="_blank" rel="noopener noreferrer">Terms of service</a>
-          <a href="https://www.umovingu.io/cookies/" target="_blank" rel="noopener noreferrer">Cookie policy</a>
-        </div>
       </div>
 
       <div class="shell footer-bottom">
         <p>&copy; 2025 umovingu Limited &middot; Company No. 13321548 &middot; Registered in England and Wales</p>
+        <p class="footer-bottom-links">
+          <a href="https://www.umovingu.io/privacy/" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+          <span class="footer-dot">&middot;</span>
+          <a href="https://www.umovingu.io/terms/" target="_blank" rel="noopener noreferrer">Terms of service</a>
+          <span class="footer-dot">&middot;</span>
+          <a href="https://www.umovingu.io/cookies/" target="_blank" rel="noopener noreferrer">Cookie policy</a>
+        </p>
+        <p class="footer-infra-note">Professional infrastructure: <a href="https://openproperty.io" target="_blank" rel="noopener noreferrer" class="footer-op-link">openproperty.io</a></p>
       </div>
     </footer>
 
@@ -957,7 +940,7 @@ const steps = [
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 0.8fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: clamp(20px, 3vw, 40px);
 }
 
@@ -995,24 +978,6 @@ const steps = [
   color: rgb(255 255 255 / 0.45);
 }
 
-.footer-infra-note {
-  margin: 0 0 4px;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 0.35);
-}
-
-.footer-op-link {
-  color: rgb(255 255 255 / 0.6) !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
-  font-size: 0.82rem !important;
-}
-
-.footer-op-link:hover {
-  color: #ffffff !important;
-}
-
 .footer-access {
   display: inline-block;
   margin: 14px 0 24px;
@@ -1025,29 +990,6 @@ const steps = [
 
 .footer-access:hover {
   color: rgb(255 255 255 / 0.7);
-}
-
-.footer-app {
-  margin-top: auto;
-}
-
-.footer-app-label {
-  margin: 0 0 10px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 0.35);
-}
-
-.footer-store-badge {
-  display: inline-block !important;
-  margin: 0 !important;
-  transition: opacity 0.15s ease;
-}
-
-.footer-store-badge:hover {
-  opacity: 0.8;
 }
 
 .footer-head {
@@ -1106,7 +1048,7 @@ const steps = [
   margin-top: clamp(32px, 4vw, 48px);
   padding: clamp(16px, 2vw, 22px) 0;
   border-top: 1px solid rgb(255 255 255 / 0.08);
-  text-align: left;
+  text-align: center;
 }
 
 .footer-bottom p {
@@ -1114,6 +1056,45 @@ const steps = [
   color: rgb(255 255 255 / 0.3);
   font-size: 0.82rem;
   line-height: 1.5;
+}
+
+.footer-bottom-links {
+  margin: 6px 0 !important;
+}
+
+.footer-bottom-links a {
+  display: inline !important;
+  color: rgb(255 255 255 / 0.5);
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.footer-bottom-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-dot {
+  color: rgb(255 255 255 / 0.3);
+  margin: 0 4px;
+}
+
+.footer-bottom .footer-infra-note {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.35);
+}
+
+.footer-bottom .footer-op-link {
+  display: inline !important;
+  font-size: inherit !important;
+  color: rgb(255 255 255 / 0.5) !important;
+  text-decoration: none !important;
+}
+
+.footer-bottom .footer-op-link:hover {
+  color: #ffffff !important;
 }
 
 .footer-bottom a {
