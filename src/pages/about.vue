@@ -156,14 +156,14 @@
       <!-- ── Founding 30 ── -->
       <section class="founding-section">
         <div class="shell">
-          <p class="section-eyebrow text-center">THE FOUNDING 30</p>
-          <h2 class="founding-heading">
-            30 people to help us<br />build this <em>right.</em>
-          </h2>
-          <p class="founding-sub">
-            We are inviting 30 homeowners to use umovingu before anyone else. Not to test it,
-            to shape it. Your home&rsquo;s real issues, your real experience of the process,
-            will make the product better for everyone who comes after you.
+          <h2 class="founding-heading">The Founding 30</h2>
+          <p class="founding-subtitle">Thirty homeowners. Private access. Before anyone else.</p>
+          <p class="founding-body">
+            We are inviting 30 homeowners to use umovingu ahead of the public launch. The product is
+            ready. What we want from the Founding 30 is honest experience &mdash; real homes, real
+            documents, real feedback that makes what is already good even better. In return you get
+            early access, a direct line to the founding team, and a Property Passport that is already
+            working for you while everyone else is still waiting.
           </p>
 
           <div class="benefits-grid">
@@ -584,10 +584,10 @@ const steps = [
 .hero-heading {
   margin: 0;
   font-family: 'Instrument Serif', serif;
-  font-weight: 400;
-  font-size: clamp(2.2rem, 6vw, 3.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
 }
 
 .hero-white {
@@ -750,23 +750,29 @@ const steps = [
 }
 
 .founding-heading {
-  margin: 0 0 clamp(28px, 4vw, 44px);
+  margin: 0;
   font-family: 'Instrument Serif', serif;
   font-weight: 700;
-  font-size: clamp(70px, 4.5vw, 2.8rem);
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
   line-height: 1;
   color: var(--ink);
-  letter-spacing: -1.8px;
 }
 
-.founding-heading em {
+.founding-subtitle {
+  margin: 20px auto 0;
+  font-family: 'Plus Jakarta Sans', 'SFMono-Regular', ui-monospace, sans-serif;
   font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1;
+  color: var(--ink);
 }
 
-.founding-sub {
-  margin: 0 auto 0;
-  max-width: 580px;
+.founding-body {
+  margin: 20px auto 0;
+  max-width: 640px;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: italic;
   font-size: 18px;
   line-height: 1.625;
   color: rgb(75 85 99 / 1);
@@ -785,6 +791,7 @@ const steps = [
   border-radius: 18px;
   padding: clamp(24px, 3vw, 36px) clamp(16px, 2vw, 24px);
   background: #ffffff;
+  text-align: left;
 }
 
 .benefit-num {
@@ -792,9 +799,20 @@ const steps = [
   font-family: 'Instrument Serif', serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 400;
-  color: rgb(0 161 154 / 0.5);
   line-height: 1;
   margin-bottom: 12px;
+}
+
+.benefit-card:nth-child(1) .benefit-num {
+  color: rgb(0 200 190 / 0.5);
+}
+
+.benefit-card:nth-child(2) .benefit-num {
+  color: rgb(0 200 190 / 0.5);
+}
+
+.benefit-card:nth-child(3) .benefit-num {
+  color: rgb(0 200 190 / 0.5);
 }
 
 .benefit-card h3 {
@@ -840,7 +858,7 @@ const steps = [
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--dark);
+  background-color: rgb(0 161 154 / var(--tw-bg-opacity, 1));
   color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.82rem;
